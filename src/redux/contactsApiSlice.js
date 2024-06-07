@@ -4,12 +4,13 @@ import { baseQuery } from './baseQueryConfig';
 export const contactsApi = createApi({
   reducerPath: 'Contacts',
   baseQuery: baseQuery,
-  tagTypes: ['contacts'],
+  tagTypes: ['Contacts'],
   endpoints: builder => ({
     getContacts: builder.query({
       query: () => `/contacts`,
       providesTags: ['Contacts'],
     }),
+
     deleteContact: builder.mutation({
       query: id => ({
         url: `/contacts/${id}`,
@@ -17,6 +18,7 @@ export const contactsApi = createApi({
       }),
       invalidatesTags: ['Contacts'],
     }),
+
     addContact: builder.mutation({
       query: new_contact => ({
         url: '/contacts',

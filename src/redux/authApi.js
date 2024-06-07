@@ -23,6 +23,7 @@ export const authApi = createApi({
       }),
       invalidatesTags: ['Auth'],
     }),
+
     logoutUser: builder.mutation({
       query: () => ({
         url: '/users/logout',
@@ -32,10 +33,8 @@ export const authApi = createApi({
     }),
 
     currentUser: builder.query({
-      query: () => ({
-        url: 'users/current',
-      }),
-      invalidatesTags: ['Auth'],
+      query: () => 'users/current',
+      providesTags: ['Auth'],
     }),
   }),
 });
