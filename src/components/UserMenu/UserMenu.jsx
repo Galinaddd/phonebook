@@ -1,11 +1,4 @@
-// import { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
-import {
-  useCurrentUserQuery,
-  useLoginUserMutation,
-  useLogoutUserMutation,
-} from '../../redux/authApi';
-import { useSelector } from 'react-redux';
+import { useCurrentUserQuery, useLoginUserMutation } from '../../redux/authApi';
 
 export const UserMenu = () => {
   const { isSuccess, data, currentData } = useCurrentUserQuery();
